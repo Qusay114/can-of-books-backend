@@ -1,4 +1,4 @@
-const UserModel = require('./modules/User');
+const UserModel = require('./User');
 
 const getBooks =  (req,res) => {
   const {email} = req.query ;
