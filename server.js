@@ -8,6 +8,7 @@ const UserModel = require('./modules/User');
 const getBooks = require('./modules/getBooks');
 const addNewBook = require('./modules/addNewBook');
 const deleteBook = require('./modules/deleteBook');
+const updateBook = require('./modules/updateBook');
 
 const app = server();
 app.use(cors());
@@ -27,7 +28,7 @@ const initializeDB = new UserModel({
 app.get('/books' , getBooks);
 app.post('/books' , addNewBook ) ;
 app.delete('/books/:id' , deleteBook ) ;
-
+app.put('/books/:index' , updateBook );
 
 const booksSeeding = () => initializeDB.save() ;
 //booksSeeding() ;
